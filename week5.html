@@ -1,0 +1,34 @@
+<html>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="./week5.js"></script>
+  <link rel="stylesheet" href="week5.css">
+  <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      
+      <form ng-submit="inputt()">
+      <input type="text" ng-model="input"></input>
+      </form>
+     
+      <div class="row">
+        <div class="col-md-6">
+          <table>
+            <tr> Original: </tr>
+            <tr ng-repeat="out in output track by $index">
+              <td>{{ out }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-md-6">
+          <table>
+            <tr> Results: </tr>
+            <tr ng-repeat="out in output track by $index">
+              <td>{{ out | palFilter}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
